@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by Mohammed Abdelaty on 12/05/2023.
-//
-
 import Foundation
 
 public enum  MoviesDBErros: Error {
