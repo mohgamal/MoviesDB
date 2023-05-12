@@ -1,5 +1,4 @@
 import SwiftUI
-import SDWebImageSwiftUI
 import MoviesDBDomain
 
 public struct MoviesListView: View {
@@ -15,36 +14,15 @@ public struct MoviesListView: View {
     public var body: some View {
         NavigationView {
             ScrollView {
-                if moviesListVM.error != nil {
-                    AnimatedImage(name: "retry.gif", bundle: .module) // Animation control binding
-                        .maxBufferSize(.max)
-                        .padding()
-                    Text(moviesListVM.error!.localizedDescription)
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 20, weight: .bold, design: .default))
-                        .padding()
-                    Text("An alien is probably blocking your signal")
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 14, weight: .light, design: .default))
-                        .padding()
-                    Button(action: self.reloadData)  {
-                        Text("Rery")
-                            .fontWeight(.semibold)
-                            .font(.headline)
-                            .foregroundColor(.green)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .border(Color.green)
-                            .cornerRadius(5)
-                            .padding()
-                    }
+                if let error = moviesListVM.error {
+                    ErrorView(reloadData: self.reloadData, error: error.localizedDescription)
                 } else {
                     if moviesListVM.loading {
                         VStack {
-                                ForEach((0..<10)) { _ in
-                                    MovieCell(movieEntity : nil).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)).shimmering()
-                                        .redacted(reason: .placeholder)
-                                }
+                            ForEach((0..<10)) { _ in
+                                MovieCell(movieEntity : nil).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)).shimmering()
+                                    .redacted(reason: .placeholder)
+                            }
                         }.accessibility(identifier: "MoviesList")
                             .navigationBarTitle("Movies List")
                     }
@@ -52,8 +30,9 @@ public struct MoviesListView: View {
                         ForEach(moviesListVM.moviesList, id: \.id) { item in
                             MovieCell(movieEntity : item).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
                         }
-                    } .accessibility(identifier: "MoviesList")
-                        .navigationBarTitle("Movies List")
+                    }
+                    .accessibility(identifier: "MoviesList")
+                    .navigationBarTitle("Movies List")
                 }
             }
         }

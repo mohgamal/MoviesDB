@@ -5,6 +5,7 @@ public class MoviesListVM: ObservableObject {
     @Published var moviesList: [MoviesListEntity] = []
     @Published var loading = true
     var error: Error?
+    @State var lastItem: Int = 0
 
     private var moviesListInteractor: MoviesListInteractor
 
@@ -19,6 +20,7 @@ public class MoviesListVM: ObservableObject {
                 self?.loading = false
                 switch moviesResult {
                 case .success(let moviesListEntity):
+                    self?.lastItem = moviesListEntity.moviesList?.count ?? 0
                     self?.moviesList.append(contentsOf: moviesListEntity.moviesList ?? [])
                     self?.objectWillChange.send()
                 case .failure(let error):
