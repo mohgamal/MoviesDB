@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A6DB3072A0E01E100FD2BAD /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6DB3062A0E01E100FD2BAD /* AppDI.swift */; };
+		9A6DB3092A0E01F500FD2BAD /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6DB3082A0E01F500FD2BAD /* AppEnvironment.swift */; };
+		9A6DB30B2A0E02A900FD2BAD /* MoviesListDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6DB30A2A0E02A900FD2BAD /* MoviesListDI.swift */; };
+		9A6DB30E2A0E047A00FD2BAD /* MoviesDBData in Frameworks */ = {isa = PBXBuildFile; productRef = 9A6DB30D2A0E047A00FD2BAD /* MoviesDBData */; };
+		9A6DB3102A0E047A00FD2BAD /* MoviesDBDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 9A6DB30F2A0E047A00FD2BAD /* MoviesDBDomain */; };
+		9A6DB3122A0E047A00FD2BAD /* MoviesDBPresentation in Frameworks */ = {isa = PBXBuildFile; productRef = 9A6DB3112A0E047A00FD2BAD /* MoviesDBPresentation */; };
 		9A8E6ABC2A0A17A400A5BA27 /* MoviesDBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E6ABB2A0A17A400A5BA27 /* MoviesDBApp.swift */; };
 		9A8E6ABE2A0A17A400A5BA27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E6ABD2A0A17A400A5BA27 /* ContentView.swift */; };
 		9A8E6AC02A0A17A500A5BA27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8E6ABF2A0A17A500A5BA27 /* Assets.xcassets */; };
@@ -34,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A6DB3062A0E01E100FD2BAD /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
+		9A6DB3082A0E01F500FD2BAD /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		9A6DB30A2A0E02A900FD2BAD /* MoviesListDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListDI.swift; sourceTree = "<group>"; };
+		9A6DB3132A0E05A800FD2BAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9A8E6AB82A0A17A400A5BA27 /* MoviesDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8E6ABB2A0A17A400A5BA27 /* MoviesDBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDBApp.swift; sourceTree = "<group>"; };
 		9A8E6ABD2A0A17A400A5BA27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A6DB30E2A0E047A00FD2BAD /* MoviesDBData in Frameworks */,
+				9A6DB3102A0E047A00FD2BAD /* MoviesDBDomain in Frameworks */,
+				9A6DB3122A0E047A00FD2BAD /* MoviesDBPresentation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,8 +88,43 @@
 		9A6DB3022A0E012400FD2BAD /* AppDI */ = {
 			isa = PBXGroup;
 			children = (
+				9A6DB3062A0E01E100FD2BAD /* AppDI.swift */,
+				9A6DB30A2A0E02A900FD2BAD /* MoviesListDI.swift */,
 			);
 			path = AppDI;
+			sourceTree = "<group>";
+		};
+		9A6DB3032A0E019200FD2BAD /* AppEnvironment */ = {
+			isa = PBXGroup;
+			children = (
+				9A6DB3082A0E01F500FD2BAD /* AppEnvironment.swift */,
+			);
+			path = AppEnvironment;
+			sourceTree = "<group>";
+		};
+		9A6DB3042A0E019C00FD2BAD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9A8E6ABF2A0A17A500A5BA27 /* Assets.xcassets */,
+				9A8E6AC12A0A17A500A5BA27 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9A6DB3052A0E01B000FD2BAD /* AppFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9A8E6ABB2A0A17A400A5BA27 /* MoviesDBApp.swift */,
+				9A8E6ABD2A0A17A400A5BA27 /* ContentView.swift */,
+			);
+			path = AppFiles;
+			sourceTree = "<group>";
+		};
+		9A6DB30C2A0E047A00FD2BAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9A8E6AAF2A0A17A400A5BA27 = {
@@ -87,6 +135,7 @@
 				9A8E6ACB2A0A17A500A5BA27 /* MoviesDBTests */,
 				9A8E6AD52A0A17A600A5BA27 /* MoviesDBUITests */,
 				9A8E6AB92A0A17A400A5BA27 /* Products */,
+				9A6DB30C2A0E047A00FD2BAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,11 +152,11 @@
 		9A8E6ABA2A0A17A400A5BA27 /* MoviesDB */ = {
 			isa = PBXGroup;
 			children = (
+				9A6DB3132A0E05A800FD2BAD /* Info.plist */,
+				9A6DB3052A0E01B000FD2BAD /* AppFiles */,
+				9A6DB3042A0E019C00FD2BAD /* Resources */,
+				9A6DB3032A0E019200FD2BAD /* AppEnvironment */,
 				9A6DB3022A0E012400FD2BAD /* AppDI */,
-				9A8E6ABB2A0A17A400A5BA27 /* MoviesDBApp.swift */,
-				9A8E6ABD2A0A17A400A5BA27 /* ContentView.swift */,
-				9A8E6ABF2A0A17A500A5BA27 /* Assets.xcassets */,
-				9A8E6AC12A0A17A500A5BA27 /* Preview Content */,
 			);
 			path = MoviesDB;
 			sourceTree = "<group>";
@@ -153,6 +202,11 @@
 			dependencies = (
 			);
 			name = MoviesDB;
+			packageProductDependencies = (
+				9A6DB30D2A0E047A00FD2BAD /* MoviesDBData */,
+				9A6DB30F2A0E047A00FD2BAD /* MoviesDBDomain */,
+				9A6DB3112A0E047A00FD2BAD /* MoviesDBPresentation */,
+			);
 			productName = MoviesDB;
 			productReference = 9A8E6AB82A0A17A400A5BA27 /* MoviesDB.app */;
 			productType = "com.apple.product-type.application";
@@ -267,7 +321,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A6DB3072A0E01E100FD2BAD /* AppDI.swift in Sources */,
+				9A6DB3092A0E01F500FD2BAD /* AppEnvironment.swift in Sources */,
 				9A8E6ABE2A0A17A400A5BA27 /* ContentView.swift in Sources */,
+				9A6DB30B2A0E02A900FD2BAD /* MoviesListDI.swift in Sources */,
 				9A8E6ABC2A0A17A400A5BA27 /* MoviesDBApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,11 +483,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MoviesDB/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MoviesDB/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = QCBY87LF55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MoviesDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -455,11 +512,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MoviesDB/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MoviesDB/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = QCBY87LF55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MoviesDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -593,6 +650,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9A6DB30D2A0E047A00FD2BAD /* MoviesDBData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MoviesDBData;
+		};
+		9A6DB30F2A0E047A00FD2BAD /* MoviesDBDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MoviesDBDomain;
+		};
+		9A6DB3112A0E047A00FD2BAD /* MoviesDBPresentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MoviesDBPresentation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9A8E6AB02A0A17A400A5BA27 /* Project object */;
 }

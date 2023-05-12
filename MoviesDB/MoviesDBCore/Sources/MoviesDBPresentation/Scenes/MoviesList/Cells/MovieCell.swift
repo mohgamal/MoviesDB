@@ -9,7 +9,7 @@ struct MovieCell: View {
 
     init (movieEntity: MoviesListEntity?) {
         self.movieEntity = movieEntity
-        imageLoader = DataLoader(resourseURL: URL(string: movieEntity?.posterPath ?? ""))
+        imageLoader = DataLoader(resourseURL: URL(string: movieEntity?.imageURL ?? ""))
     }
 
     var body: some View {
@@ -17,35 +17,31 @@ struct MovieCell: View {
             if let uiImage = UIImage(data: self.imageLoader.data) {
                 AnyView(Image(uiImage: uiImage)
                     .resizable()
-                    .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .clipShape(Circle())
+                    .frame(width: 150, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .aspectRatio(contentMode: .fit)
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
                 )
             } else {
                 AnyView(Image(systemName: "photo")
                     .resizable()
-                    .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .clipShape(Circle())
+                    .frame(width: 159, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .aspectRatio(contentMode: .fit)
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
                     .onAppear(perform: { self.imageLoader.loadImage() }))
             }
-            VStack {
+            VStack() {
                 Text(movieEntity?.title ?? placeholderText)
                     .font(.headline)
                     .foregroundColor(.black)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(5)
-                Text("\(movieEntity?.releaseDate ?? placeholderText)")
+                Text("\(movieEntity?.releaseYear ?? placeholderText)")
                     .font(.subheadline)
                     .foregroundColor(.black)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(5)
-                Text("\(movieEntity?.overview ?? placeholderText)")
-                    .font(.body)
-                    .foregroundColor(.gray)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .lineLimit(4)
-                    .padding(5)
 
-            }
+            }.padding()
         }
         .padding()
         .background(

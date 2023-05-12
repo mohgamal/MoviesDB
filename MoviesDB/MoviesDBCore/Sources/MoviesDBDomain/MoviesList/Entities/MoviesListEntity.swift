@@ -15,6 +15,8 @@ public struct MoviesListEntity : Codable {
 	public let video : Bool?
 	public let voteAverage : Double?
 	public let voteCount : Int?
+    public let releaseYear: String
+    public let imageURL: String
 
     public init(adult: Bool? = nil,
                 backdropPath: String? = nil,
@@ -44,6 +46,23 @@ public struct MoviesListEntity : Codable {
         self.video = video
         self.voteAverage = voteAverage
         self.voteCount = voteCount
+        self.releaseYear = MoviesListEntity.getReleaseYear(from: releaseDate ?? "")
+        self.imageURL = "\(Constants.baseImageURL.rawValue)\(posterPath ?? "")"
     }
 
+    private static func getReleaseYear(from strDate: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let date = dateFormatter.date(from: strDate) else { return "" }
+
+        dateFormatter.dateFormat = "yyyy"
+        let yearString = dateFormatter.string(from: date)
+        return yearString
+    }
+
+    enum Constants: String {
+        case baseImageURL = "https://image.tmdb.org/t/p/w500"
+    }
 }
+
+

@@ -3,7 +3,6 @@ import SDWebImageSwiftUI
 import MoviesDBDomain
 
 public struct MoviesListView: View {
-
     var appDI: AppDIInterface
     @ObservedObject public var moviesListVM: MoviesListVM
 
