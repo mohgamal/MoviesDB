@@ -9,8 +9,8 @@ public class MoviesListDataRepo: MoviesListDomainRepoInterface {
         self.moviesListRemoteDataSource = moviesListRemoteDataSource
     }
 
-    public func getMoviesList(handler: @escaping (Result<DiscoverMoviesEntity, MoviesDBErros>) -> (Void)) {
-        moviesListRemoteDataSource.getMoviesList{ discoverMoviesModel in
+    public func getMoviesList(page: Int = 1, handler: @escaping (Result<DiscoverMoviesEntity, MoviesDBErros>) -> (Void)) {
+        moviesListRemoteDataSource.getMoviesList(page: page){ discoverMoviesModel in
             switch discoverMoviesModel {
             case .success(let moviesResultModel):
                 handler(.success(moviesResultModel.dotMoviesListModel()))

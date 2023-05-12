@@ -5,7 +5,7 @@ public protocol MoviesListRemoteDataSourceInterface {
 
     init (urlString: String)
 
-    func getMoviesList(handler: @escaping (Result<DiscoverMoviesModel, MoviesDBErros>) -> Void)
+    func getMoviesList(page: Int, handler: @escaping (Result<DiscoverMoviesModel, MoviesDBErros>) -> Void)
 }
 
 public class MoviesListRemoteDataSource: MoviesListRemoteDataSourceInterface {
@@ -15,8 +15,8 @@ public class MoviesListRemoteDataSource: MoviesListRemoteDataSourceInterface {
         self.urlString = urlString
     }
 
-    public func getMoviesList(handler: @escaping (Result<DiscoverMoviesModel, MoviesDBErros>) -> Void) {
-        guard let url = URL(string: "\(urlString)") else {
+    public func getMoviesList(page: Int = 1, handler: @escaping (Result<DiscoverMoviesModel, MoviesDBErros>) -> Void) {
+        guard let url = URL(string: "\(urlString)&page=\(page)") else {
             handler(.failure(MoviesDBErros.NotFound))
             return
         }

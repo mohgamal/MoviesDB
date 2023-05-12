@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol MoviesListInteractorInterface {
-    func getMoviesList(handler: @escaping (Result<DiscoverMoviesEntity, MoviesDBErros>)  -> (Void))
+    func getMoviesList(page: Int, handler: @escaping (Result<DiscoverMoviesEntity, MoviesDBErros>)  -> (Void))
 }
 
 public class MoviesListInteractor: MoviesListInteractorInterface {
@@ -11,8 +11,8 @@ public class MoviesListInteractor: MoviesListInteractorInterface {
         self.moviesListDomainRepoInterface = moviesListgDomainRepoInterface
     }
 
-    public func getMoviesList(handler: @escaping (Result<DiscoverMoviesEntity, MoviesDBErros>) -> (Void)) {
-        moviesListDomainRepoInterface.getMoviesList() { moviesListDomainEntity in
+    public func getMoviesList(page: Int = 1, handler: @escaping (Result<DiscoverMoviesEntity, MoviesDBErros>) -> (Void)) {
+        moviesListDomainRepoInterface.getMoviesList(page: page) { moviesListDomainEntity in
             handler(moviesListDomainEntity)
         }
     }

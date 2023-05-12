@@ -12,14 +12,14 @@ public class MoviesListVM: ObservableObject {
         self.moviesListInteractor = moviesListInteractor
     }
 
-    func getMoviesList() {
+    func getMoviesList(page: Int) {
         self.loading = true
-        moviesListInteractor.getMoviesList { [weak self] (moviesResult) in
+        moviesListInteractor.getMoviesList(page: page) { [weak self] (moviesResult) in
             DispatchQueue.main.async {
                 self?.loading = false
                 switch moviesResult {
                 case .success(let moviesListEntity):
-                    self?.moviesList = moviesListEntity.moviesList ?? []
+                    self?.moviesList.append(contentsOf: moviesListEntity.moviesList ?? [])
                     self?.objectWillChange.send()
                 case .failure(let error):
                     self?.error = error

@@ -5,6 +5,7 @@ import MoviesDBDomain
 public struct MoviesListView: View {
     var appDI: AppDIInterface
     @ObservedObject public var moviesListVM: MoviesListVM
+    @State private var page = 1
 
     public init(appDI: AppDIInterface, moviesListVM: MoviesListVM) {
         self.appDI = appDI
@@ -40,13 +41,10 @@ public struct MoviesListView: View {
                 } else {
                     if moviesListVM.loading {
                         VStack {
-                            if #available(iOS 14.0, *) {
                                 ForEach((0..<10)) { _ in
                                     MovieCell(movieEntity : nil).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)).shimmering()
                                         .redacted(reason: .placeholder)
                                 }
-
-                            } else { }
                         }.accessibility(identifier: "MoviesList")
                             .navigationBarTitle("Movies List")
                     }
@@ -60,13 +58,13 @@ public struct MoviesListView: View {
             }
         }
         .onAppear {
-            self.moviesListVM.getMoviesList()
+            self.moviesListVM.getMoviesList(page: page)
         }
         .accessibility(identifier: "MoviesListView")
     }
 
     func reloadData() {
         self.moviesListVM.error = nil
-        self.moviesListVM.getMoviesList()
+        self.moviesListVM.getMoviesList(page: page)
     }
 }

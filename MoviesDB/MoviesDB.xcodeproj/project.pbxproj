@@ -43,7 +43,7 @@
 		9A6DB3062A0E01E100FD2BAD /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
 		9A6DB3082A0E01F500FD2BAD /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		9A6DB30A2A0E02A900FD2BAD /* MoviesListDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListDI.swift; sourceTree = "<group>"; };
-		9A6DB3132A0E05A800FD2BAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9A6DB3132A0E05A800FD2BAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A8E6AB82A0A17A400A5BA27 /* MoviesDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8E6ABB2A0A17A400A5BA27 /* MoviesDBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDBApp.swift; sourceTree = "<group>"; };
 		9A8E6ABD2A0A17A400A5BA27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +114,7 @@
 		9A6DB3052A0E01B000FD2BAD /* AppFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9A6DB3132A0E05A800FD2BAD /* Info.plist */,
 				9A8E6ABB2A0A17A400A5BA27 /* MoviesDBApp.swift */,
 				9A8E6ABD2A0A17A400A5BA27 /* ContentView.swift */,
 			);
@@ -152,7 +153,6 @@
 		9A8E6ABA2A0A17A400A5BA27 /* MoviesDB */ = {
 			isa = PBXGroup;
 			children = (
-				9A6DB3132A0E05A800FD2BAD /* Info.plist */,
 				9A6DB3052A0E01B000FD2BAD /* AppFiles */,
 				9A6DB3042A0E019C00FD2BAD /* Resources */,
 				9A6DB3032A0E019200FD2BAD /* AppEnvironment */,
@@ -487,7 +487,7 @@
 				DEVELOPMENT_TEAM = QCBY87LF55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MoviesDB/Info.plist;
+				INFOPLIST_FILE = MoviesDB/AppFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -516,7 +516,7 @@
 				DEVELOPMENT_TEAM = QCBY87LF55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MoviesDB/Info.plist;
+				INFOPLIST_FILE = MoviesDB/AppFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
