@@ -18,6 +18,7 @@ let package = Package(
                  targets: ["MoviesDBPresentation"])
     ],
     dependencies: [
+        .package(url: "https://github.com/markiv/SwiftUI-Shimmer.git", from: "1.0.0"),
     ],
     targets: [
         .target(
@@ -30,7 +31,8 @@ let package = Package(
         .target(name: "MoviesDBData",
                 dependencies: ["MoviesDBDomain"]),
         .target(name: "MoviesDBPresentation",
-                dependencies: ["MoviesDBDomain"]),
+                dependencies: ["MoviesDBDomain",
+                               .product(name: "Shimmer", package: "SwiftUI-Shimmer"),]),
         .testTarget(
             name: "MoviesDBCoreTests",
             dependencies: ["MoviesDBCore"]),
