@@ -19,6 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/markiv/SwiftUI-Shimmer.git", from: "1.0.0"),
+        .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", from: "2.0.0")
     ],
     targets: [
         .target(
@@ -32,7 +33,9 @@ let package = Package(
                 dependencies: ["MoviesDBDomain"]),
         .target(name: "MoviesDBPresentation",
                 dependencies: ["MoviesDBDomain",
-                               .product(name: "Shimmer", package: "SwiftUI-Shimmer"),]),
+                               .product(name: "Shimmer", package: "SwiftUI-Shimmer"),
+                               .product(name: "SDWebImageSwiftUI", package: "SDWebImageSwiftUI")],
+                resources: [.copy("Resources/retry.gif")]),
         .testTarget(
             name: "MoviesDBCoreTests",
             dependencies: ["MoviesDBCore"]),

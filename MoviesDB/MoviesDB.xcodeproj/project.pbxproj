@@ -72,6 +72,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A6DB3022A0E012400FD2BAD /* AppDI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppDI;
+			sourceTree = "<group>";
+		};
 		9A8E6AAF2A0A17A400A5BA27 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +103,7 @@
 		9A8E6ABA2A0A17A400A5BA27 /* MoviesDB */ = {
 			isa = PBXGroup;
 			children = (
+				9A6DB3022A0E012400FD2BAD /* AppDI */,
 				9A8E6ABB2A0A17A400A5BA27 /* MoviesDBApp.swift */,
 				9A8E6ABD2A0A17A400A5BA27 /* ContentView.swift */,
 				9A8E6ABF2A0A17A500A5BA27 /* Assets.xcassets */,
