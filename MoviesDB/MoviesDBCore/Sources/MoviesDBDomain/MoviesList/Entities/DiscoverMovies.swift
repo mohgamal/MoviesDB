@@ -1,10 +1,10 @@
 import Foundation
 
 public struct DiscoverMoviesEntity : Codable {
-	let page : Int?
-	let moviesList : [MoviesListEntity]?
-	let totalPages : Int?
-	let totalResults : Int?
+	public let page : Int?
+	public let moviesList : [MoviesListEntity]?
+	public let totalPages : Int?
+	public let totalResults : Int?
 
     public init(page: Int? = nil,
                   moviesList: [MoviesListEntity]? = nil,
